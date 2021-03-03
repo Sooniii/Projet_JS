@@ -1,4 +1,4 @@
-const panierButton = document.querySelectorAll('.fa fa-cart-plus');
+const panierButton = document.querySelectorAll('.add-to-cart');
 const list = document.querySelector('#cart');
 let allArticle = [];
 
@@ -9,12 +9,13 @@ function ajouterPanier() {
     item.setAttribute('data-key', id);
     const txt = document.createElement('span');
     txt.innerText = 'test'
+    item.appendChild(txt);
     list.appendChild(item);
     allArticle.push(item);
     console.log(allArticle);
 }
 
 
-panierButton.addEventListener('click', ajouterPanier);
+panierButton[0].addEventListener('click', ajouterPanier);
 
 
