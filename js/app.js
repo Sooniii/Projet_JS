@@ -6,7 +6,7 @@ for(let i = 0; i < panierButton.length; i++) {
     panierButton[i].addEventListener('click', ajouterPanier);
 }
 
-//window.localStorage.clear();
+window.localStorage.clear();
 
 function ajouterPanier(event) {
     if (event.target.parentElement.querySelector('.stock').innerHTML > 0) {
@@ -26,7 +26,6 @@ function ajouterPanier(event) {
         item.appendChild(txt);
         tBody.appendChild(item);
         allArticle.push(item);
-        console.log(window.localStorage.getItem(COURSES[attrib].title));
         if (window.localStorage.getItem(COURSES[attrib].title) == null) {
             window.localStorage.setItem(COURSES[attrib].title, 1);
         }else{
