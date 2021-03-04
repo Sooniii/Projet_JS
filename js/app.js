@@ -1,6 +1,6 @@
 const panierButton = document.querySelectorAll('.add-to-cart');
 const tBody = document.querySelector('tbody');
-const notif = document.getElementById('notif');
+const notif = document.getElementById('notification_container');
 
 let allArticle = [];
 
