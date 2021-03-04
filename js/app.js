@@ -1,10 +1,13 @@
 const panierButton = document.querySelectorAll('.add-to-cart');
+const viderPanierButton = document.querySelector('#empty-cart')
 const tBody = document.querySelector('tbody');
 let allArticle = [];
 
 for(let i = 0; i < panierButton.length; i++) {
     panierButton[i].addEventListener('click', ajouterPanier);
 }
+console.log(viderPanierButton);
+viderPanierButton.addEventListener('click', viderPanier);
 
 window.localStorage.clear();
 
@@ -32,6 +35,14 @@ function ajouterPanier(event) {
             let newQuantity = parseInt(window.localStorage.getItem(COURSES[attrib].title)) + 1;
             window.localStorage.setItem(COURSES[attrib].title, newQuantity);
         }
+    }
+}
+
+function viderPanier(e){
+    window.localStorage.clear();
+    while(tBody.firstChild ){
+        console.log(tBody.firstChild);
+        tBody.removeChild(tBody.firstChild);
     }
 }
 
