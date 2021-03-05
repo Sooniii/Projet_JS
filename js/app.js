@@ -38,6 +38,7 @@ function ajouterPanier(event) {
         COURSES[attrib].stock -= 1;
         item.appendChild(img);
         item.appendChild(txt);
+        item.appendChild(buttonSuppr)
         notif.appendChild(newDiv);
         setTimeout(function(){
             notif.removeChild(newDiv);
@@ -45,6 +46,7 @@ function ajouterPanier(event) {
         tBody.appendChild(item);
         if (window.localStorage.getItem(COURSES[attrib].title) == null) {
             window.localStorage.setItem(COURSES[attrib].title, 1);
+        buttonSuppr.addEventListener('click', supprimerPanier);
         }else{
             let newQuantity = parseInt(window.localStorage.getItem(COURSES[attrib].title)) + 1;
             window.localStorage.setItem(COURSES[attrib].title, newQuantity);
