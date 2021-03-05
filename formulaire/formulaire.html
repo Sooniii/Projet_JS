@@ -6,8 +6,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
     <script type="text/javascript">
-      function selected(){
-        alert("Inscription réussie !")
+      function testChekBoxe(){
+        if(form.checkbox.checked == true){
+        alert("Inscription réussie !");
+        open(href="file:///Users/oceanelegoff/Desktop/semaine%20js%2003:03/Projet_JS/index.html")
+        } else{
+        alert("Veuillez accepter les conditions générales de vente du site");
+        open(href="formulaire.html")
+        }
       }
     </script>  
   </head>
@@ -19,16 +25,22 @@
         <i class="fas fa-at"></i>
         <i class="fas fa-mail-bulk"></i>
       </div>
-      <form action="/">
+      <form id="form" action="/">
         <h1>Formulaire inscription</h1>
         <div class="info">
-          <input type="text"name="name" placeholder="Nom" >
-          <input type="text" name="name" placeholder="Prenom">
-          <input type="text" name="name" placeholder="Email">
-          <input type="text" name="name" placeholder="Numero telephone">
+          <input type="text"name="nom" placeholder="Nom" >
+          <input type="text" name="prenom" placeholder="Prenom">
+          <input type="text" name="adresse" placeholder="Adresse">
+          <input type="email" name="mail" placeholder="Email">
+          <input type="password" name="paiement" placeholder="Numero carte bancaire">
+          <input type="tel" name="telephone" placeholder="Numero telephone">
+        </div> 
+        <div>
+          <input type="checkbox" name="checkbox" value="checkbox">
+          <label for="conditionsG">J’accepte les conditions générales de vente du site</label>
         </div>
-        <button type="submit" onfocus="selected()">Submit</button>
-        <button type="reset">Reset</button>
+        <button type="submit" onclick="testChekBoxe()">Submit</button>
+        <button type="reset">Reset</button>            
       </form>
     </div>
   </body>
