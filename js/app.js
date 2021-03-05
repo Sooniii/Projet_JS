@@ -69,6 +69,17 @@ function ajouterPanier(event) {
 //Supprime les articles
 function supprimerPanier(event){
     event.target.parentElement.remove();
+
+    let newDiv = document.createElement('div');
+    newDiv.innerHTML = "<p>Cours retirer du panier</p>";
+    newDiv.className = "content";
+
+
+    notif.appendChild(newDiv);
+setTimeout(function(){
+    notif.removeChild(newDiv);
+}, 3000);
+
 }
 
 //Vide la panier
