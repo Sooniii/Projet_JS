@@ -79,11 +79,9 @@ function viderPanier(e){
         tBody.removeChild(tBody.firstChild);
     }
     let stockList = document.querySelectorAll('.stock');
-    stockList[0].innerHTML = 10;
-    stockList[1].innerHTML = 10;
-    stockList[2].innerHTML = 5;
-    stockList[3].innerHTML = 3;
-    stockList[4].innerHTML = 2;
+    for(let i = 0; i < stockList.length; i++){
+        stockList[i].innerHTML = COURSES[i+1].stock;
+    }
 
     let newDiv = document.createElement('div');
     newDiv.innerHTML = "<p>Votre panier a été vidé</p>";
