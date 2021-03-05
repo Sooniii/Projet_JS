@@ -54,6 +54,16 @@ function viderPanier(e){
         console.log(tBody.firstChild);
         tBody.removeChild(tBody.firstChild);
     }
+    let newDiv = document.createElement('div');
+    newDiv.innerHTML = "<p>Votre panier a été vidé</p>";
+    newDiv.className = "content";
+
+
+    notif.appendChild(newDiv);
+    setTimeout(function(){
+        console.log('en attente');
+        notif.removeChild(newDiv);
+    }, 3000);
 }
 
 
