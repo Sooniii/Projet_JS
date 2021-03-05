@@ -51,8 +51,7 @@ function ajouterPanier(event) {
         }
         let priceArticle = (event.target.parentElement.querySelector('.discount').innerHTML)
         .slice(0, (event.target.parentElement.querySelector('.discount').innerHTML).length - 1);
-        priceArticle = priceArticle.replace('.', ',');
-        let priceArticleNumber = parseInt(priceArticle);
+        let priceArticleNumber = parseFloat(priceArticle);
         totalPrice += priceArticleNumber;
         const newPrice = tBody.querySelector('span');
         newPrice.innerHTML = 'Prix total du panier : ' + totalPrice + '€'
