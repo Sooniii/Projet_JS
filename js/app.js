@@ -64,7 +64,6 @@ function viderPanier(e){
     }
     let stockList = document.querySelectorAll('.stock');
     for(let i = 0; i < stockList.length; i++){
-        console.log(COURSES[i+1].stock);
         stockList[i].innerHTML = COURSES[i+1].stock;
     }
 
