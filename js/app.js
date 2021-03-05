@@ -69,6 +69,9 @@ function ajouterPanier(event) {
 //Supprime les articles
 function supprimerPanier(event){
     event.target.parentElement.remove();
+    totalPrice -= 9.99;
+    const newPrice = tBody.querySelector('span');
+    newPrice.innerHTML = 'Prix total du panier : ' + totalPrice + '€';
 
     let newDiv = document.createElement('div');
     newDiv.innerHTML = "<p>Cours retirer du panier</p>";
