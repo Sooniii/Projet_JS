@@ -8,7 +8,6 @@ let totalPrice = 0;
 for(let i = 0; i < panierButton.length; i++) {
     panierButton[i].addEventListener('click', ajouterPanier);
 }
-console.log(viderPanierButton);
 viderPanierButton.addEventListener('click', viderPanier);
 
 window.localStorage.clear();
@@ -41,11 +40,9 @@ function ajouterPanier(event) {
         item.appendChild(txt);
         notif.appendChild(newDiv);
         setTimeout(function(){
-            console.log('en attente');
             notif.removeChild(newDiv);
         }, 3000);
         tBody.appendChild(item);
-        allArticle.push(item);
         if (window.localStorage.getItem(COURSES[attrib].title) == null) {
             window.localStorage.setItem(COURSES[attrib].title, 1);
         }else{
@@ -65,7 +62,6 @@ function ajouterPanier(event) {
 function viderPanier(e){
     window.localStorage.clear();
     while(tBody.firstChild ){
-        console.log(tBody.firstChild);
         tBody.removeChild(tBody.firstChild);
     }
     let stockList = document.querySelectorAll('.stock');
@@ -82,7 +78,6 @@ function viderPanier(e){
 
     notif.appendChild(newDiv);
     setTimeout(function(){
-        console.log('en attente');
         notif.removeChild(newDiv);
     }, 3000);
 }
