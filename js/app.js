@@ -35,7 +35,6 @@ function ajouterPanier(event) {
         let newDiv = document.createElement('div');
         newDiv.innerHTML = "<p>Cours : " + COURSES[attrib].title + " " + "Cours ajouter au panier</p>";
         newDiv.className = "content";
-        COURSES[attrib].stock -= 1;
         item.appendChild(img);
         item.appendChild(txt);
         notif.appendChild(newDiv);
@@ -64,11 +63,10 @@ function viderPanier(e){
         tBody.removeChild(tBody.firstChild);
     }
     let stockList = document.querySelectorAll('.stock');
-    stockList[0].innerHTML = 10;
-    stockList[1].innerHTML = 10;
-    stockList[2].innerHTML = 5;
-    stockList[3].innerHTML = 3;
-    stockList[4].innerHTML = 2;
+    for(let i = 0; i < stockList.length; i++){
+        console.log(COURSES[i+1].stock);
+        stockList[i].innerHTML = COURSES[i+1].stock;
+    }
 
     let newDiv = document.createElement('div');
     newDiv.innerHTML = "<p>Votre panier a été vidé</p>";
