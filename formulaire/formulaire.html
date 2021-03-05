@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>inscription</title>
+    <link rel="stylesheet" type="text/css" href="formulaire.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <script type="text/javascript">
+      function selected(){
+        alert("Inscription réussie !")
+      }
+    </script>  
+  </head>
+
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+      </div>
+      <form action="/">
+        <h1>Formulaire inscription</h1>
+        <div class="info">
+          <input type="text"name="name" placeholder="Nom" >
+          <input type="text" name="name" placeholder="Prenom">
+          <input type="text" name="name" placeholder="Email">
+          <input type="text" name="name" placeholder="Numero telephone">
+        </div>
+        <button type="submit" onfocus="selected()">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </div>
+  </body>
+</html>
