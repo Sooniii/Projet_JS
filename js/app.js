@@ -1,3 +1,4 @@
+//Récuperation d'éléments html
 const panierButton = document.querySelectorAll('.add-to-cart');
 const viderPanierButton = document.querySelector('#empty-cart')
 const tBody = document.querySelector('tbody');
@@ -5,14 +6,18 @@ const notif = document.getElementById('notification_container');
 
 let totalPrice = 0;
 
+//Ajout d'event sur les boutons 
 for(let i = 0; i < panierButton.length; i++) {
     panierButton[i].addEventListener('click', ajouterPanier);
 }
 viderPanierButton.addEventListener('click', viderPanier);
 
+//Clear du storage quand on arrive sur le site
 window.localStorage.clear();
 
+//Fonction permettant d'ajouter un cours dans le panier
 function ajouterPanier(event) {
+    //Crée la balise qui affiche le prix total si aucun cours n'est dans le panier
     if (tBody.firstChild == null) {
         const priceLi = document.createElement('li');
         const priceTxt = document.createElement('span');
@@ -20,6 +25,7 @@ function ajouterPanier(event) {
         priceLi.appendChild(priceTxt);
         tBody.appendChild(priceLi);
     }
+    //Rajoute un article dans le panier si la quantité est disponible
     if (event.target.parentElement.querySelector('.stock').innerHTML > 0) {
         event.target.parentElement.querySelector('.stock').innerHTML -= 1;
         let src = event.target.parentElement.parentElement.querySelector('img').getAttribute('src');
@@ -57,7 +63,9 @@ function ajouterPanier(event) {
     }
 }
 
+//Vide la panier
 function viderPanier(e){
+    totalPrice = 0;
     window.localStorage.clear();
     while(tBody.firstChild ){
         tBody.removeChild(tBody.firstChild);
